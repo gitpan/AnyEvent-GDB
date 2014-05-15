@@ -11,6 +11,7 @@ my $mm = MM->new({
     PREREQ_PM        => {
        common::sense => 3.6,
        Task::Weaken  => 0,
+       AnyEvent      => 6,
     },
 });
 

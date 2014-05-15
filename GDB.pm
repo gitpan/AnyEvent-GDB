@@ -69,13 +69,13 @@ set a tty (eg. with the C<inferior_set_tty> command).
 Unfortunately, the MI interface does not seem to support any kind
 of I/O redirection, so this module helps you a bit, by setting the
 C<exec-wrapper> variable with a console C<set> commmand. That is, this
-module does soemthing like this for you, providing proper file descriptors
-fpr your actual stdin and stdout:
+module does soeQmthing like the following for you, providing proper file
+descriptors for your actual stdin and stdout:
 
    set exec-wrapper <&5 >&6
 
 The actual I/O redirection operators are also stored in C<< $gdb->{stdio}
->>, so you can even do it yourself, e.gh. when providing your own wrapper:
+>>, so you can even do it yourself, e.g. when providing your own wrapper:
 
    $self->cmd_raw ("set exec-wrapper $self->{stdio}", sub { });
 
@@ -95,7 +95,7 @@ use Scalar::Util ();
 use AnyEvent ();
 use AnyEvent::Util ();
 
-our $VERSION = '0.1';
+our $VERSION = '0.2';
 
 =head2 METHODS
 
@@ -111,7 +111,7 @@ callback.
 
    my $gdb = new AnyEvent::GDB
       on_eof => sub {
-         print Qe are done.\n";
+         print "We are done.\n";
       },
       trace => 1; # or verbose => 1, for less output
 
